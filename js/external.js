@@ -29,7 +29,6 @@ enrollment = (!copacity && !conflict);
 alert("You can enroll! "+ enrollment);
 
 
-
 let premium = confirm("Press okay if you're a premium memeber.");
 let product = confirm("Press okay if you brought more than two items.");
 let expired= confirm ("Press okay if offer has expired.");
