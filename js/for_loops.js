@@ -1,5 +1,6 @@
 "use strict";
 (function(){
+    //#2 Multiply by 7
     function showMultiplicationTable(input){
         for (let i=1; i<=10;i++){
             console.log(input + " X " + i + " = " + (input*i));
@@ -7,9 +8,9 @@
         }
     }
     showMultiplicationTable(7);
-
+//3 even and odd
     for(let i= 1; i <=10; i++) {
-        let r = Math.floor(Math.random() * 20) + 180;
+        let r = Math.floor(Math.random() * 181) + 20;/// originally added 21 + 180
         if (r % 2 === 0) {
             console.log("It's even.")
         } else {
@@ -30,7 +31,7 @@ let n = 9
 
     }
     console.log(str);
-// 5
+// 5 Random number
     let num = 5
     for (let i = 100; i >= 1; i-=5 ){//i-5
         // if (i>= 5){
