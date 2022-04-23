@@ -64,5 +64,5 @@ let array = [1,2,3,4,5]
     function lastElementOfArray(){
     console.log(array[4])
     }
-    lastElementOfArray()
+    lastElementOfArray()//use returns next time!
 })();
