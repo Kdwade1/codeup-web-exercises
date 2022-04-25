@@ -160,15 +160,17 @@ console.log(books[0].title + " by " + books[0].author.firstName + " " + books[0]
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-function CreateBook(title,author){
+function createBook(title,author){
     this.title=title;
     this.author=author;
-    this.getDetail=function (){
-        return this.title + "written by "+ this.author
-    }
-        console.log(CreateBook("cookie", "mice"));
+    this.getDetail=function (){// <------ gives us the return statement
+        return this.title + " written by "+ this.author
+    };
+}
+let book = new createBook("cookie","Kandy")
+    console.log(book.getDetail())
 
 
-    }
-//     console.log("Hello")
+
+
 })();
