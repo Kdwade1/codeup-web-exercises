@@ -25,4 +25,10 @@ planetsArray= planetsString.split("|")
      */
 let planets=["Mercury<br>,Venus<br>,Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune<br>"]
     console.log(planets)
+
 })();
+// Another way to do it is
+//let planetWithBreaks=planetArray.join("br")
+
+//let planetsUl="<ul><li>"+planetArray.join("</li><li>"+ "</li></ul>"
+//document.body.innerHtml += planetsUL:
