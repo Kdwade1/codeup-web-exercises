@@ -61,7 +61,7 @@ function sayHello(){
 //     }
 // }
 shoppers.forEach(function (shoppers){
-    if(shoppers.amount>= 200){
+    if(shoppers.amount> 200){
         console.log(shoppers.name + " you owe $"+ shoppers.amount.toFixed(2) + " but you're approved for the discount,saving $" +(shoppers.amount *.12).toFixed(2)+ " dollars. you're new balance is $"+(shoppers.amount-shoppers.amount* .12 ).toFixed(2))
     }else{
         console.log(shoppers.name + " you owe $"+ shoppers.amount.toFixed(2) + " unfortunately you did not qualify for the discount.")
@@ -170,7 +170,7 @@ function createBook(title,author){
 let book = new createBook("cookie","Kandy")
     console.log(book.getDetail())
 
-
+console.log(books.getDetail())
 
 
 })();
