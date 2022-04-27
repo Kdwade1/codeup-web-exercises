@@ -13,3 +13,17 @@ for(let i = 1; i<101; i++){
         console.log(i)
     }
 }
+//
+// function allFirstLetters ([x]){
+//    return x.map()
+// }
+// console.log(allFirstLetters(["dog","cat","frog","bat"]))
+
+function allFirstletters(arr){
+    let bucket = "";
+    for(let el of arr){
+        bucket+=el[0]
+    }
+    return bucket;
+}
+//<--- use substring for  better result.
