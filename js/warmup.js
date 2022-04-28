@@ -27,3 +27,8 @@ function allFirstletters(arr){
     return bucket;
 }
 //<--- use substring for  better result.
+
+function inorder(x){
+    return x.split("").sort().join('')
+}
+console.log(inorder("Codeup"))
