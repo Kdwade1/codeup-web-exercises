@@ -1,6 +1,46 @@
 
 .fancy-Header {
-    color: purple;
+    color: darkred;
+    text-decoration: underline;
+    text-align: center;
+    font-family: Wingdings;
 }
-
-
+body{
+    background-image: url("../img/matrix.jpg");
+    background-color: black;
+    color:ghostwhite;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: xx-large;
+}
+h2{
+    text-decoration: underline;
+}
+.list{
+    list-style: square;
+    color:red;
+}
+tr{
+    color:lightpink;
+    font-size: x-large;
+    padding: initial;
+    font-weight: bolder;
+}
+td{
+    color:yellow;
+    font-weight: bold;
+    font-size: large;
+}
+.foot-header:hover{
+    background-color: darkgreen;
+    color:black;
+}
+.foot-header:active{
+    background-color:crimson;
+    color:black
+}
+.foot-header:visited{
+    color:lightgreen;
+}
+.foot-header{
+    color:olivedrab;
+}
