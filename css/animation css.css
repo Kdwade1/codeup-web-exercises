@@ -7,15 +7,27 @@
 
 @keyframes texty {
     0%{color:black;left: 0px;top: 0px; }
-    25%{color:blue; left:200px; top: 0px}
-    50%{color:crimson; left:200px; top:200px}
-    75%{color:green;left:0px;top: 200px}
+    25%{color:blue; left:400px; top: 0px}
+    50%{color:crimson; left:400px; top:400px}
+    75%{color:green;left:0px;top: 400px}
     100%{color: black; left: 0px;top:0px}
 
 }
+#pic{
+    animation-name: texty;
+    position: relative;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+#text-box{
+    animation-name: texty;
+    position: relative;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
 p{
     animation-name: texty;
-    animation-duration: 1s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     position: relative;
     text-align: center;
