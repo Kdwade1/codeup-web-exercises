@@ -18,7 +18,14 @@ p{
     animation-duration: 1s;
     animation-iteration-count: infinite;
     position: relative;
+    text-align: center;
 
+}
+a{
+    animation-name:texty;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position: relative;
 }
 
 #text{
