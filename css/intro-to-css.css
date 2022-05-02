@@ -3,7 +3,7 @@
     color: darkred;
     text-decoration: underline;
     text-align: center;
-    font-family: "Comic Sans MS";
+    font-family: Wingdings;
 }
 body{
     background-image: url("../img/matrix.jpg");
@@ -24,6 +24,9 @@ tr{
     font-size: x-large;
     padding: initial;
     font-weight: bolder;
+}
+table{
+    text-align: center;
 }
 td{
     color:yellow;

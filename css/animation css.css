@@ -12,12 +12,14 @@
     75%{color:green;left:0px;top: 400px}
     100%{color: black; left: 0px;top:0px}
 
+
 }
+
 #pic{
     animation-name: texty;
     position: relative;
     animation-duration: 5s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 3;
 }
 #text-box{
     animation-name: texty;
