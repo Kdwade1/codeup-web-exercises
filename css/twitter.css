@@ -32,7 +32,6 @@ a {
 
 .top-nav {
     background: var(--light-bg);
-    display: inline-block;
     width: 100%;
     position: fixed;
     z-index: 1000;
@@ -58,7 +57,8 @@ a {
 .profile {
     background: var(--light-bg);
     height: 80px;
-    line-height: 80px;
+    position: relative;
+
 
 }
 
@@ -96,11 +96,11 @@ li {
 
 .profile-image {
     position: absolute;
-    top: 230px;
+    top: -28px;
 }
 
 .profile-details {
-    width: calc(25% - .5em);
+    width: calc(25% - 1em);
     margin: .5em 0;
     top:0;
     bottom:0;
@@ -109,7 +109,7 @@ li {
 }
 
 .timeline {
-    width: calc(50% - .5em);
+    width: calc(50% - 1em);
     margin-right: .5em;
     top: 0;
     bottom: 0;
@@ -126,5 +126,31 @@ li {
 }
 
 .container{
-   margin: 2em;
+   margin-top: 2em;
 }
+.media{
+    width:100%;
+    background:var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding:.5em
+
+
+}
+.nav-item{
+    display:inline-block;
+}
+.profile-form{
+    float:right;
+    line-height: 80px;
+    overflow: auto;
+}
+.media-image{
+    width:50px;
+    float:left;
+    margin-top: 1.33em;
+}
+/*.media-body{*/
+/*    float:left;*/
+/*    width:calc(100% - 50px)*/
+
+/*}*/
