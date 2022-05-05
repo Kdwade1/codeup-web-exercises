@@ -1,11 +1,12 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
 }
 
 body {
     background-color: gray;
+    padding:10px
 }
 
 .alert-info {
@@ -49,10 +50,12 @@ a {
 }
 
 .header-img {
-    display: inline-block;
-   width: 100%;
-    text-align: center;
-    margin: auto;
-
-
+    display: flex;
+   width: 90%;
+    margin:0;
+    justify-content: center;
+    position: relative;
+}
+img{
+    width:100%
 }
