@@ -1,8 +1,34 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: black;
     color: Gold;
-    width: 30px;
-    height:30px;
+    width: 100%;
+    margin:0
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+ul{
+    list-style: none;
+    margin:0;
+    padding-left:0;
+}
+a:hover{
+    color:gold;
+}
 
+nav{
+    background-color: darkgoldenrod;
+}
+a{
+    /*display: inline-block;*/
+    text-decoration: 0;
+    color: black;
+    margin: 0;
+    padding:0 .5em
+}
