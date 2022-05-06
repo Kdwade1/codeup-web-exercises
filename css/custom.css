@@ -1,0 +1,58 @@
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*body {*/
+/*    !*display: flex;*!*/
+
+
+/*}*/
+
+/*button {*/
+/*    position: relative;*/
+/*    align-items: flex-start;*/
+/*}*/
+/*nav{*/
+/*    width: 100%*/
+/*}*/
+/*.navbar-collapse{*/
+/*    width: 100%*/
+/*}*/
+/*div.navbar{*/
+/*    width: 100%*/
+/*}*/
+
+/*input {*/
+/*    background-color: black;*/
+/*}*/
+
+/*section {*/
+/*    display: flex;*/
+/*    align-content: center;*/
+/*    justify-content: center;*/
+
+/*}*/
+
+.jumboTron {
+    /*opacity: 0.5;*/
+    background-image: url("../img/pizza.png");
+    height: 346px;
+    background-size: cover;
+}
+/*h1{*/
+/*    background-color: white;*/
+/*    width:100%;*/
+/*    display:flex;*/
+/*    opacity: .5;*/
+/*    align-items: center;*/
+/*    position: relative;*/
+/*    top: 25%;*/
+/*    right:10%*/
+/*}*/
+/*.card-header{*/
+/*    background-color: #0d6efd;*/
+/*    color:white;*/
+/*}*/
+/*.card-title{*/
+/*    background-color: #f7f7f7;*/
+/*}*/
