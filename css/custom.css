@@ -38,6 +38,9 @@
     background-image: url("../img/pizza.png");
     height: 346px;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
 }
 /*h1{*/
