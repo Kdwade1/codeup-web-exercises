@@ -110,3 +110,40 @@ function largestHeight(arr){
 }
 
 console.log(largestHeight(hamsters))
+
+function mostColorful(arr){
+    let colorful = {fur: []}
+    for (let hamster of arr){
+        if(hamster.fur.length > colorful.fur.length){
+            colorful = hamster
+        }
+    }
+    return colorful
+
+}
+console.log(mostColorful(hamsters))
+
+function isOneWord(string) {
+    let count={}
+    obj.string= string;
+    obj.size= string.length
+    obj.isOneWord=str.indexOf(' ') < 0;
+    let lc =str.toLowerCase()
+
+
+
+}
+
+function heightLessThan(arr){
+    let height=[]
+    for(let hamster of arr){
+        if(hamster.heightInMM < 100){
+            height.push(hamster)
+
+
+        }
+    }
+    return height
+}
+
+console.log(heightLessThan(hamsters));
