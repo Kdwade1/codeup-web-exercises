@@ -26,6 +26,9 @@ function allFirstletters(arr){
     }
     return bucket;
 }
+
+console.log(allFirstletters(["cat,dog,frog,bat"]));
+
 //<--- use substring for  better result.
 
 function inorder(x){
