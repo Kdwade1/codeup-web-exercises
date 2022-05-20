@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1 class=""> Hello Code Up</h1>
+<h1 class="codeup"> Hello Code Up</h1>
 <div class="codeup">
     <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet consequatur corporis cum
         debitis deleniti ea expedita fugiat fugit, id, illo libero magni non optio placeat quae, quis rerum saepe.</p>
@@ -23,11 +23,24 @@
       //   alert(content)
       //   $(".codeup").css("border","1px solid red")
         $("li").css("font-size",'20px')
-        $("h1,p,li").css('background','red')
-        alert(content)
+        $("h1,p,li").css('background','yellow')
+
 
 
     })
+$("h1").click(function(){
+    $(this).css('background','red')
+})
+    $('p').dblclick(function (){
+        $(this).css("font-size", '18px')
+    })
+    $("li").hover(function (){
+        $(this).css("color","red")
+    },  function(){
+        (this).css("color","black")
+    })
+
+
 </script>
 </body>
 </html>
