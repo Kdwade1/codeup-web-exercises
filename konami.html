@@ -5,6 +5,71 @@
     <title>Title</title>
 </head>
 <body>
+<div id="konami-code">
+    <p>Heya</p>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    // let cheatCode = {
+    //     13: 'start',
+    //     37: 'left',
+    //     38: 'up',
+    //     39: 'right',
+    //     40: 'down',
+    //     65: 'a',
+    //     66: 'b'
+    //
+    // };
+    let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65,13];
+    let codePlacement = 0;
+    let songOfHealing = [37,39,40,37,39,40]
+    let ben = [40,39,37,40,39,37]
+    let storm=[66,38,40,66,38,40]
+    let saria =[40,39,37,40,39,37]
 
+
+
+
+    $(document).keydown(function (e) {
+        let key = e.keyCode
+        let password = konamiCode[codePlacement]
+        if (key === password) {
+            console.log(password);
+
+            codePlacement++
+            if (codePlacement === konamiCode.length) {
+                activateCheats();
+                codePlacement = 0
+                alert("Congrats,you cheated!")
+
+                console.log(codePlacement)
+            }
+
+        } else {
+            codePlacement = 0
+            alert("WRONG!")
+            var audio = new Audio('sound/m_laugh.mp3');
+            audio.play();
+        }
+        // let password2= saria[codePlacement]
+        // if(key === password2){
+        //     codePlacement++
+        //     if(codePlacement === saria.length){
+        //         $(document).css('background-image','img/goron_dance.jpg')
+        //     }
+        // }
+
+    })
+
+
+    function activateCheats() {
+        $(document).css("background-image", "url('images/cheatBackground.png')");
+
+        var audio = new Audio('audio/pling.mp3');
+        audio.play();
+
+        alert("cheats activated");
+    }
+</script>
 </body>
 </html>
