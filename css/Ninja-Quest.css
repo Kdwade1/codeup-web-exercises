@@ -2,10 +2,12 @@
     box-sizing: border-box;
 }
 body{
+    /*background-image:url("img/place") ;*/
     background-color: black;
     color: Gold;
     width: 100%;
     margin:0
+
 }
 
 .container{
@@ -26,7 +28,7 @@ nav{
     background-color: darkgoldenrod;
 }
 a{
-    /*display: inline-block;*/
+
     text-decoration: 0;
     color: black;
     margin: 0;

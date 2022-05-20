@@ -78,6 +78,19 @@ let answer =prompt("Enter a color.").toLowerCase().trim()
 
     })
 
+let input = document.getElementById("todo")
+    let toDoList= document.getElementById("todosList")
+    let submitting = document.getElementById("addTodo")
+
+
+    submitting.addEventListener("click", function (){
+        if (input.value !== ""){
+            let str ="<li>" + input.value + "</li>"
+            toDoList.innerHTML += str;
+            input.value = "";
+        }
+    })
+
 
 
 </script>
