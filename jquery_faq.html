@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .invisible{
+            display: none;
+        }
+        a{
+            color: blue;
+        }
+        a:hover{
+            color:red
+        }
+        .highlight{
+            background-color: yellow;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>Yellow Stone</dt>
+    <dd>Yellow stone is the oldest natural park in the united states,founded in 1872</dd>
+<br>
+    <dt>Ribbon falls</dt>
+    <dd>Is 9x taller than Niagara falls</dd>
+<br>
+    <dt>Death Valley</dt>
+    <dd>One of the world's hottest temperatures were recorded at Death Valley Natural parts.</dd>
+<br>
+    <dt>Sequoia</dt>
+    <dd> Sequoia natural park is home to the world's largest single stem tree in the world.</dd>
+<br>
+    <dt>Arches natural park</dt>
+    <dd> is famous for having the largest concentration of stone arches in the world</dd>
+<br>
+    <dt>Everglade</dt>
+    <dd>Everglade natural park protects more than 25% of Flordia's everglades</dd>
+<br>
+    <dt>Dry tortuga natural park</dt>
+    <dd>in Florida is known for its world-renowned concentration of turtles</dd>
+<br>
+    <dt> Kobuk Valley</dt>
+    <dd>Is one of the least visited natural parks, receiving just around 3000 people a year</dd>
+<br>
+    <dt>Mamoth Cave</dt>
+    <dd>Has the longest cave systems in the world</dd>
+<br>
+    <dt>Carlsbad Cavern</dt>
+    <dd> Is home of the u.s deepest cave in new mexico</dd>
+    <br>
+    <a class="toggle">Click</a>
+</dl>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $("dd").addClass("invisible")
+    $("a").click(function (){
+        $("dd").toggleClass("invisible")
+    })
+
+$("dt").click(function(){
+    if ($(this).hasClass('highlight')){
+        $(this).removeClass("highlight")
+    }else{
+        $(this).addClass('highlight')
+
+    }
+        // $("dt").toggleClass("highlight")
+})
+</script>
+</body>
+</html>

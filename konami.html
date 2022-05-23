@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/konami.css">
 </head>
 <body>
+
 <div id="konami-code">
-    <p>Heya</p>
+    <p>Konami!</p>
 </div>
+<img id="goron" src="img/goron_dance.jpg">
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
-    // let cheatCode = {
-    //     13: 'start',
-    //     37: 'left',
-    //     38: 'up',
-    //     39: 'right',
-    //     40: 'down',
-    //     65: 'a',
-    //     66: 'b'
-    //
-    // };
+
     let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65,13];
     let codePlacement = 0;
     let songOfHealing = [37,39,40,37,39,40]
@@ -33,6 +27,11 @@
     $(document).keydown(function (e) {
         let key = e.keyCode
         let password = konamiCode[codePlacement]
+        let password2= saria[codePlacement]
+        let password3 =songOfHealing[codePlacement]
+        let password4 =ben[codePlacement]
+        let password5= storm[codePlacement]
+
         if (key === password) {
             console.log(password);
 
@@ -41,17 +40,26 @@
                 activateCheats();
                 codePlacement = 0
                 alert("Congrats,you cheated!")
+                $("#goron").css("display","inline")
+
 
                 console.log(codePlacement)
+            } else if (key === password2){
+                codePlacement++
+                if (codePlacement === saria.length){
+                    alert("cheat activated")
+                    codePlacement = 0
+                }
             }
 
         } else {
             codePlacement = 0
             alert("WRONG!")
-            var audio = new Audio('sound/m_laugh.mp3');
-            audio.play();
+
+            // var audio = new Audio('sound/m_laugh.mp3');
+            // audio.play();
         }
-        // let password2= saria[codePlacement]
+
         // if(key === password2){
         //     codePlacement++
         //     if(codePlacement === saria.length){
@@ -63,12 +71,12 @@
 
 
     function activateCheats() {
-        $(document).css("background-image", "url('images/cheatBackground.png')");
+        $(document).css("background-image", "url('images/Ben_drowned.webp')");
+        alert("wow!")
 
-        var audio = new Audio('audio/pling.mp3');
+        var audio = new Audio('audio/healing.mp3');
         audio.play();
 
-        alert("cheats activated");
     }
 </script>
 </body>
