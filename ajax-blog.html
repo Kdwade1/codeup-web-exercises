@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog!</title>
+    <style>
+        divv{
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="posts"></div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    $.get( "/data/blog.json").done (function(data) {
+        $( "#posts" ).html( );
+        data.forEach(function(blog){
+            let div= "<div>" + blog.title + "</div>"
+            let br = "<br>"
+            let hr = "<hr>"
+            let divv= "<div>"+ blog.content + "</div>"
+            let divvv = "<div>"+ blog.categories+"</div>"
+            let divvvv= "<div>"+ blog.date+"</div>"
+            $("#posts").append(br+div+hr+br+divv+br+divvv+br+divvvv)
+        })
+
+    });
+
+</script>
+</body>
+</html>
