@@ -45,7 +45,7 @@
     <button id="toggleH1">Toggle!</button>
 </div>
 
-<div class="question">
+<div class="question" id="question">
     <br>
     <br>
     <h1>Question 4</h1>
@@ -66,36 +66,39 @@
 <script>
 
     // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
-let answer =prompt("Enter a color.").toLowerCase().trim()
+// let answer =prompt("Enter a color.").toLowerCase().trim()
+//
+//         let colors = document.getElementsByClassName("question")[0]
+//     colors.style.color=answer
+//
+//     let bgColor = document.getElementById("changeColor").addEventListener("click",function (){
+//
+//         let color = document.getElementById("color").value
+//         document.body.style.background =color
+//
+//     })
+//
+// let input = document.getElementById("todo")
+//     let toDoList= document.getElementById("todosList")
+//     let submitting = document.getElementById("addTodo")
+//
+//
+//     submitting.addEventListener("click", function (){
+//         if (input.value !== ""){
+//             let str ="<li>" + input.value + "</li>"
+//             toDoList.innerHTML += str;
+//             input.value = "";
+//         }
+//     })
+//
+//     setInterval(function(){
+//      $("h1").css("font-size",'10px')
+//     },1000)
 
-        let colors = document.getElementsByClassName("question")[0]
-    colors.style.color=answer
 
-    let bgColor = document.getElementById("changeColor").addEventListener("click",function (){
-
-        let color = document.getElementById("color").value
-        document.body.style.background =color
-
-    })
-
-let input = document.getElementById("todo")
-    let toDoList= document.getElementById("todosList")
-    let submitting = document.getElementById("addTodo")
-
-
-    submitting.addEventListener("click", function (){
-        if (input.value !== ""){
-            let str ="<li>" + input.value + "</li>"
-            toDoList.innerHTML += str;
-            input.value = "";
-        }
-    })
-
-    setInterval(function(){
-     $("h1").css("font-size",'10px')
-    },1000)
-
-
+$("#question").mouseenter(function (){
+    alert("congratulation you have won!")
+})
 
 
 </script>
