@@ -14,70 +14,57 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
 
-    let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65,13];
-    let codePlacement = 0;
+    let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
     let songOfHealing = [37,39,40,37,39,40]
     let ben = [40,39,37,40,39,37]
     let storm=[66,38,40,66,38,40]
-    let saria =[40,39,37,40,39,37]
+    let saria =[40,39,37,40,39,37,40]
+    let userInput= []
 
 
+function password(userInput,cheat){
+        if(userInput.length === cheat.length){
+            for(i =0; i< cheat.length; i++){
+                if(cheat[i]!== userInput[i]){
+                    // return false;
+                }
+            }
+            return true
+        }else{
+            return false
+        }
 
+
+}
 
     $(document).keydown(function (e) {
         let key = e.keyCode
-        let password = konamiCode[codePlacement]
-        let password2= saria[codePlacement]
-        let password3 =songOfHealing[codePlacement]
-        let password4 =ben[codePlacement]
-        let password5= storm[codePlacement]
-
-        if (key === password) {
-            console.log(password);
-
-            codePlacement++
-            if (codePlacement === konamiCode.length) {
-                activateCheats();
-                codePlacement = 0
-                alert("Congrats,you cheated!")
-                $("#goron").css("display","inline")
+        console.log(key)
 
 
-                console.log(codePlacement)
-            } else if (key === password2){
-                codePlacement++
-                if (codePlacement === saria.length){
-                    alert("cheat activated")
-                    codePlacement = 0
-                }
+        if (key === 13) {
+
+            if (password(userInput, konamiCode)) {
+                alert("Konami code acheive")
+            }else if(password(userInput, songOfHealing )){
+                alert("song of healing is playing")
             }
-
+                else if(password(userInput, ben)){
+                alert("you shouldn't of done that ....")
+            }else if (password(userInput,storm )){
+                    alert("Is it raining?")
+            }else if(password(userInput,saria)){
+                alert("Look at them dance!")
+            }
         } else {
-            codePlacement = 0
-            alert("WRONG!")
+            userInput.push(key)
 
-            // var audio = new Audio('sound/m_laugh.mp3');
-            // audio.play();
         }
-
-        // if(key === password2){
-        //     codePlacement++
-        //     if(codePlacement === saria.length){
-        //         $(document).css('background-image','img/goron_dance.jpg')
-        //     }
-        // }
 
     })
 
 
-    function activateCheats() {
-        $(document).css("background-image", "url('images/Ben_drowned.webp')");
-        alert("wow!")
 
-        var audio = new Audio('audio/healing.mp3');
-        audio.play();
-
-    }
 </script>
 </body>
 </html>
