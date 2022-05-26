@@ -2,69 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Konami Code</title>
     <link rel="stylesheet" href="css/konami.css">
 </head>
 <body>
+<h1 class="Konami"> CONGRATS YOU CHEATED!</h1>
+
+<h1 id="mistake">You shouldn't of done that.......</h1>
+
 
 <div id="konami-code">
     <p>Konami!</p>
 </div>
+<p id="useless"></p>
 <img id="goron" src="img/goron_dance.jpg">
+<img src="img/Ben_drowned.webp">
+
+
 <script src="js/jquery-3.6.0.min.js"></script>
-<script>
-
-    let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-    let songOfHealing = [37,39,40,37,39,40]
-    let ben = [40,39,37,40,39,37]
-    let storm=[66,38,40,66,38,40]
-    let saria =[40,39,37,40,39,37,40]
-    let userInput= []
-
-
-function password(userInput,cheat){
-        if(userInput.length === cheat.length){
-            for(i =0; i< cheat.length; i++){
-                if(cheat[i]!== userInput[i]){
-                    // return false;
-                }
-            }
-            return true
-        }else{
-            return false
-        }
-
-
-}
-
-    $(document).keydown(function (e) {
-        let key = e.keyCode
-        console.log(key)
-
-
-        if (key === 13) {
-
-            if (password(userInput, konamiCode)) {
-                alert("Konami code acheive")
-            }else if(password(userInput, songOfHealing )){
-                alert("song of healing is playing")
-            }
-                else if(password(userInput, ben)){
-                alert("you shouldn't of done that ....")
-            }else if (password(userInput,storm )){
-                    alert("Is it raining?")
-            }else if(password(userInput,saria)){
-                alert("Look at them dance!")
-            }
-        } else {
-            userInput.push(key)
-
-        }
-
-    })
-
-
-
-</script>
+<script src="js/Konami.js"> </script>
 </body>
 </html>

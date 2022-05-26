@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <title>MAPS</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #marker{
+
+        }
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
 </head>
 <body>
 <div id="map" style='width:95vw; height:75vh'></div>
+<section id="marker"></section>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
@@ -14,14 +22,12 @@
 <script>
     mapboxgl.accessToken = MAPBOX_API_KEY;
     const MAP = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/dark-v10', // style URL
-        center: [-98.4946, 29.4252], // starting position [lng, lat]
-        zoom: 13 // starting zoom
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        center: [-98.4946, 29.4252],
+        zoom: 13
     });
-    // const MARKER = new mapboxgl.Marker()
-    //     .setLngLat([-98.49144, 29.4281])
-    //     .addTo(MAP)
+
     geocode("122 E Houston St, San Antonio, TX 78205", MAPBOX_API_KEY).then(function (data) {
         console.log(data)
 
@@ -29,28 +35,53 @@
     let places = [
         {
             name: "Blanco Cafe",
-            coordinates: ([-98.49144, 29.4281])
+            coordinates: ([-98.49144, 29.4281]),
+            imageFile:"img/Blanco.jpg"
 
         }, {
             name: "Pat O Brien",
-            coordinates: ([-98.487378, 29.424415])
+            coordinates: ([-98.487378, 29.424415]),
+            imageFile: "img/Hurricanes.jpg"
         }, {
             name: "Bunz",
-            coordinates: ([-98.492907, 29.42629])
+            coordinates: ([-98.492907, 29.42629]),
+            imageFile: "img/rawimage.jpg"
         }
     ]
     places.forEach(function (place) {
         let marker = new mapboxgl.Marker()
             .setLngLat(place.coordinates)
             .addTo(MAP)
-        // places.forEach(function(place){
             let popup =new mapboxgl.Popup()
                 .setHTML(place.name)
             marker.setPopup(popup)
                 .addTo(MAP)
     })
-
-
+//     const marker = new mapboxgl.Marker({
+//         color: '#F84C4C' // color it red
+//             .setLngLat(([-98.492907, 29.42629]))
+//             .addTo(MAP)
+//     });
+//
+//     function animateMarker(timestamp) {
+//         const radius = 20;
+//
+//         /*
+//         Update the data to a new position
+//         based on the animation timestamp.
+//         The divisor in the expression `timestamp / 1000`
+//         controls the animation speed.
+//         */
+//         marker.setLngLat([
+//             Math.cos(timestamp / 1000) * radius,
+//             Math.sin(timestamp / 1000) * radius
+//         ]);
+//         marker.addTo(map);
+//
+// // Request the next frame of the animation.
+//         requestAnimationFrame(animateMarker);
+//     }
+//     requestAnimationFrame(animateMarker);
 </script>
 </body>
 </html>
