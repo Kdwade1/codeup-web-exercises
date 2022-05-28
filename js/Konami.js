@@ -33,14 +33,18 @@ $(document).keydown(function (e) {
         if (password(userInput, konamiCode)) {
             alert("Konami code acheive")
             $(".Konami").css("display","inline")
+            $("p").append("Wow such skill")
+            $("p").append("So cool!")
+
         } else if (password(userInput, songOfHealing)) {
             alert("song of healing is playing")
         } else if (password(userInput, ben)) {
             alert("you shouldn't of done that ....")
+            $("body").css("background-image","/img/Ben_drowned.webp")
         } else if (password(userInput, storm)) {
             alert("Is it raining?")
         } else if (password(userInput, saria)) {
-            alert("Look at them dance!")
+            alert("Look at him dance!")
             $("#goron").css("display","inline")
         }
         userInput = [];
