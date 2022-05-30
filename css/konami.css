@@ -1,3 +1,6 @@
+body{
+  
+}
 #goron {
     display: none;
     height: 500px;
@@ -8,8 +11,8 @@
 @keyframes texty {
     0%{color:black;left: 0px;top: 0px; }
     25%{color:blue; left:400px; top: 0px}
-    50%{color:crimson; left:400px; top:400px}
-    75%{color:green;left:0px;top: 400px}
+    50%{color:crimson; left:400px; top:600px}
+    75%{color:green;left:0px;top: 500px}
     100%{color: black; left: 0px;top:0px}
 }
 @keyframes example {

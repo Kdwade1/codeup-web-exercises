@@ -33,8 +33,8 @@ $(document).keydown(function (e) {
         if (password(userInput, konamiCode)) {
             alert("Konami code acheive")
             $(".Konami").css("display","inline")
-            $("p").append("Wow such skill")
-            $("p").append("So cool!")
+            $(".cookie").append("Wow such skill")
+            $(".cool").append("So cool!").repeat(2)
 
         } else if (password(userInput, songOfHealing)) {
             alert("song of healing is playing")
