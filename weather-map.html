@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <link href="css/weather-map.css"rel="stylesheet">
+    <style>
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
 </head>
 <body>
+
+<div id="map"style="width: 40vw; height:40vh"></div>
+<h1 id="place" style="margin-top: 300px">Test</h1>
+<div class="container">
+</div>
+<button>Click me</button>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/Geecode-utils.js"></script>
 <script src="js/weather-app.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    const MAP = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        center: [-98.4946, 29.4252],
+        zoom: 13
+    });
+
+        const MARKER = new mapboxgl.Marker()
+            .setLngLat([-98.4946, 29.4252])
+            .setDraggable(true)
+            .addTo(MAP)
+
+    MARKER.on("dragend",function(){
+        LONG_LAT =MARKER.getLngLat()
+        // document.getElementById("place").innerHTML= LONG_LAT.lng + ", "+ LONG_LAT.lat
+        MAP.flyTo({center:[LONG_LAT.lng,LONG_LAT.lat]})
+        reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data){
+            console.log(data);
+            document.getElementById("place").innerHTML = data;
+        })
+
+    })
+
+
+</script>
 </body>
 </html>

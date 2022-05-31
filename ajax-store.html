@@ -57,6 +57,7 @@
         // TODO: Create an AJAX GET request for the file under data/inventory.json
         $.get("/data/inventory.json").done(function (product) {
             $('#products').html('');
+            console.log(product)
             product.forEach(function (pro){
                let tr = "<tr>"
                 let ctr="</tr>"
