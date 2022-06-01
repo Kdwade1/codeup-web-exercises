@@ -12,11 +12,13 @@
 </head>
 <body>
 
-<div id="map"style="width: 40vw; height:40vh"></div>
+<p id="map"style="width: 100vw; height:40vh; margin:0em 2em 2em 0em"></p>
+
 <h1 id="place" style="margin-top: 300px">Test</h1>
+<input type="text"id="input"> </input>
+<button>Click me</button>
 <div class="container">
 </div>
-<button>Click me</button>
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/Geecode-utils.js"></script>
@@ -28,7 +30,7 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/dark-v10',
         center: [-98.4946, 29.4252],
-        zoom: 13
+        zoom: 10
     });
 
         const MARKER = new mapboxgl.Marker()
@@ -38,12 +40,16 @@
 
     MARKER.on("dragend",function(){
         LONG_LAT =MARKER.getLngLat()
-        // document.getElementById("place").innerHTML= LONG_LAT.lng + ", "+ LONG_LAT.lat
         MAP.flyTo({center:[LONG_LAT.lng,LONG_LAT.lat]})
         reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data){
             console.log(data);
             document.getElementById("place").innerHTML = data;
         })
+
+
+    })
+
+    $("button").click(function(){
 
     })
 
