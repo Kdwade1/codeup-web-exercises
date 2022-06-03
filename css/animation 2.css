@@ -244,11 +244,44 @@
 
 
 
-html, body {
-    margin: 0;
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-canvas {
-    display: block;
+html{
+    font-size: 10px;
+    font-family:  sans-serif;
 }
+section{
+    width:100%;
+    height:100vw;
+    color:#fff;
+    background:linear-gradient(135deg ,blue,red,yellow,green,crimson,gold);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+}
+h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 3px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    padding: 5rem 10rem
 
+}
+@keyframes change {
+    0%{
+        background-position: 0 50%;
+}
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+             background-position: 0 50%;
+         }
+}
