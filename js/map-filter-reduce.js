@@ -57,13 +57,11 @@ const userNames= users.reduce((x,user)=>{
 console.log(userNames);
 
 const unique= users.reduce((x,user)=>{
-for(let langs of user.languages){
-if (x.includes(langs)){
-    continue
-}else{
-    x.push(langs)
+for(let langs of user.languages) {
+    if (!x.includes(langs)) {
+        x.push(langs)
+    }
 }
-
-}
+return langs
 },[])
 console.log(unique)
