@@ -4,7 +4,7 @@ fetch(URL, {headers: {'Authorization': `token ${GITHUB_API_KEY}`}})
     .then((resp) => resp.json())
     .then((data) => {
         console.log(data)
-        let lastCommit = {
+        let lastCommit = {gi
             date: `${data[0].created_at}`
         }
 console.log(lastCommit)
