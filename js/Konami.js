@@ -10,7 +10,7 @@ let userInput = []
 
 function password(userInput, cheat) {
     if (userInput.length === cheat.length) {
-        for (i = 0; i < cheat.length; i++) {
+        for (let i = 0; i < cheat.length; i++) {
             if (cheat[i] !== userInput[i]) {
                 return false;
             }
@@ -36,14 +36,39 @@ $(document).keydown(function (e) {
             $(".cookie").append("Wow such skill")
             $(".cool").append("So cool!").repeat(2)
 
-        } else if (password(userInput, songOfHealing)) {
+        }
+        if (password(userInput, songOfHealing)) {
             alert("song of healing is playing")
-        } else if (password(userInput, ben)) {
+            $("#healing").css("display","inline")
+            setTimeout(()=>{
+                $("#healing").css("display","none")
+            },10000)
+
+
+        }  if (password(userInput, ben)) {
             alert("you shouldn't of done that ....")
+            setTimeout(()=>{
+                alert("Why did you do that.....")
+                $("body").css("background-color","black")
+            },5000)
+            setTimeout(()=>{
+                alert("ha...ha....ha")
+            },10000)
+            setTimeout(()=>{
+                $("#ben").css("display","inline")
+            },13000)
+            setTimeout(()=>{
+                $("#ben").css("display","none")
+                $("body").css("background-color","white")
+            },15500)
             $("body").css("background-image","/img/Ben_drowned.webp")
-        } else if (password(userInput, storm)) {
+        }  if (password(userInput, storm)) {
             alert("Is it raining?")
-        } else if (password(userInput, saria)) {
+            $("#storm").css("display","inline")
+            setTimeout(()=>{
+                $("#storm").css("display","none")
+            },10000)
+        }  if (password(userInput, saria)) {
             alert("Look at him dance!")
             $("#goron").css("display","inline")
         }
