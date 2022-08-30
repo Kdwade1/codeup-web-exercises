@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    /*background-image:url("img/place") ;*/
+    /*!*background-image:url("img/place") ;*!*/
     background-color: black;
     color: Gold;
     width: 100%;
@@ -13,7 +13,9 @@ body{
 .container{
     display: flex;
     align-items: center;
+    text-align: center;
     font-weight: bolder;
+
 }
 ul{
     list-style: none;
@@ -26,6 +28,11 @@ a:hover{
 
 nav{
     background-color: darkgoldenrod;
+    height: 4vh;
+    margin:0;
+    padding:0;
+
+
 }
 a{
 
@@ -33,4 +40,11 @@ a{
     color: black;
     margin: 0;
     padding:0 .5em
+}
+ .icons {
+     display:flex;
+    color:red;
+    align-items: flex-end;
+    justify-content: flex-end;
+     flex-grow:1;
 }

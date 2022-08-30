@@ -9,11 +9,11 @@ body{
 
 }
 @keyframes texty {
-    0%{color:black;left: 0px;top: 0px; }
-    25%{color:blue; left:400px; top: 0px}
+    0%{color:black;left: 0;top: 0; }
+    25%{color:blue; left:400px; top: 0}
     50%{color:crimson; left:400px; top:600px}
-    75%{color:green;left:0px;top: 500px}
-    100%{color: black; left: 0px;top:0px}
+    75%{color:green;left:0;top: 500px}
+    100%{color: black; left: 0;top:0}
 }
 @keyframes example {
     0%   {color: red;}
@@ -50,25 +50,31 @@ body{
 #ben {
     display: none;
 }
-
-p {
-    /*  !* for first text *!*/
-    /*             color: #dfdfdf;*/
-    /*             text-shadow: 0 0 2px #dfdfdf,*/
-    /*             -4px 5px 0 #b8b8b8,*/
-    /*             -7px 11px 0 #747474,*/
-    /*             -12px 17px 0 #343434,*/
-    /*             -17px 23px 0 #000;*/
-    /*         }*/
-
-    /* #useless{*/
-    /*color: #67875d;*/
-    /*text-shadow: 0 0 2px #67875d,*/
-    /*-4px 5px 0 #5d7755,*/
-    /*-7px 11px 0 #4d6047,*/
-    /*-12px 17px 0 #2e382b,*/
-    /*-17px 23px 0 #000;*/
+#healing{
+    height: 100vh;
+    display: none;
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
 }
+#storm{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+#ben{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+
 
 button {
 

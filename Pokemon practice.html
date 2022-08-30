@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemonn Api</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script src="js/jquery-3.6.0.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script>
+    $.get('https://pokeapi.co/api/v2/pokemon/absol').done(function (info) {
+        console.log(info.sprites.front_default);
+        $.get(info.held_items[0].item.url).done(function (data) {
+            console.log(data.flavor_text_entries[6].text)
+            $.get(info.moves[2].name).done(function(poki){
+                console.log("hello")
+            })
+
+        })
+    })
+
+
+</script>
+
+</body>
+</html>
