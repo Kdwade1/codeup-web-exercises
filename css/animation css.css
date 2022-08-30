@@ -14,36 +14,66 @@
 
 
 }
-
-#pic{
-    animation-name: texty;
-    position: relative;
-    animation-duration: 5s;
-    animation-iteration-count: 3;
-}
-#text-box{
-    animation-name: texty;
-    position: relative;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-p{
-    animation-name: texty;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    position: relative;
-    text-align: center;
-
-}
-a{
-    animation-name:texty;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    position: relative;
+@keyframes Colors {
+    0% {
+        Background: #f20044;
+    }
+    20% {
+        background: orange;
+    }
+    40% {
+        background: yellow;
+    }
+    60% {
+        background: green;
+    }
+    80% {
+        background: blue;
+    }
+    90% {
+        background: violet;
+    }
+    100% {
+        background: #f20044;
+    }
 }
 
-#text{
-    font-size: xx-large;
+/*#pic{*/
+/*    animation-name: texty;*/
+/*    position: relative;*/
+/*    animation-duration: 5s;*/
+/*    animation-iteration-count: 3;*/
+/*}*/
+/*#text-box{*/
+/*    animation-name: texty;*/
+/*    position: relative;*/
+/*    animation-duration: 3s;*/
+/*    animation-iteration-count: infinite;*/
+/*}*/
+/*p{*/
+/*    animation-name: texty;*/
+/*    animation-duration: 10s;*/
+/*    animation-iteration-count: infinite;*/
+/*    position: relative;*/
+/*    text-align: center;*/
+
+/*}*/
+/*a{*/
+/*    animation-name:texty;*/
+/*    animation-duration: 10s;*/
+/*    animation-iteration-count: infinite;*/
+/*    position: relative;*/
+/*}*/
+
+/*#text{*/
+/*    font-size: xx-large;*/
+/*}*/
+
+.square{
+    height: 10vh;
+    width: 10vw;
+    animation:Colors 5s linear infinite;
+    border: black  1px solid  ;
 }
 /*!* The element to apply the animation to *!*/
 /*div {*/
