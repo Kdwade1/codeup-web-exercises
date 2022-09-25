@@ -3,9 +3,11 @@ body{
 }
 #goron {
     display: none;
-    height: 500px;
-    width:500px;
-    margin: 20em auto 10em 20em
+    height: 100vh;
+    width:100vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
 
 }
 @keyframes texty {
@@ -24,21 +26,21 @@ body{
 .Konami{
     text-align: center;
     display: none;
-    animation-name: example,texty ;
-    animation-iteration-count: infinite,3;
-    animation-duration: 3s;
+    /*animation-name: example,texty ;*/
+    /*animation-iteration-count: infinite,3;*/
+    /*animation-duration: 3s;*/
     position: relative;
     margin:300px;
     font-family: 'Anton', sans-serif;;
-    font-size: 80px;
-    text-shadow: 0 2px 2px #dfdfdf,
-    -2px 5px 1px #b8b8b8,
-    -4px 8px 0px #979797,
-    -6px 11px 0px #747474,
-    -8px 14px 0px #565656,
-    -10px 17px 0px #343434,
-    -12px 20px 0px #171717,
-    -14px 23px 0px #000;
+    font-size: 20px;
+    /*text-shadow: 0 2px 2px #dfdfdf,*/
+    /*-2px 5px 1px #b8b8b8,*/
+    /*-4px 8px 0px #979797,*/
+    /*-6px 11px 0px #747474,*/
+    /*-8px 14px 0px #565656,*/
+    /*-10px 17px 0px #343434,*/
+    /*-12px 20px 0px #171717,*/
+    /*-14px 23px 0px #000;*/
 }
 
 
@@ -47,11 +49,9 @@ body{
     display: none;
 }
 
-#ben {
-    display: none;
-}
 #healing{
     height: 100vh;
+    width:100vw;
     display: none;
     box-sizing: border-box;
     padding:0;
@@ -76,6 +76,3 @@ body{
 
 
 
-button {
-
-}

@@ -33,20 +33,24 @@ $(document).keydown(function (e) {
         if (password(userInput, konamiCode)) {
             alert("Konami code acheive")
             $(".Konami").css("display","inline")
-            $(".cookie").append("Wow such skill")
-            $(".cool").append("So cool!").repeat(2)
+            setTimeout(()=>{
+                $(".Konami").css("display","none")
+            },10000)
 
         }
         if (password(userInput, songOfHealing)) {
             alert("song of healing is playing")
             $("#healing").css("display","inline")
+            $(".title").css("display","none")
             setTimeout(()=>{
                 $("#healing").css("display","none")
-            },10000)
+                $(".title").css("display","inline")
+            },5000)
 
 
         }  if (password(userInput, ben)) {
             alert("you shouldn't of done that ....")
+            $(".title").css("display","none")
             setTimeout(()=>{
                 alert("Why did you do that.....")
                 $("body").css("background-color","black")
@@ -60,17 +64,27 @@ $(document).keydown(function (e) {
             setTimeout(()=>{
                 $("#ben").css("display","none")
                 $("body").css("background-color","white")
+                $(".title").css("display","inline")
             },15500)
-            $("body").css("background-image","/img/Ben_drowned.webp")
-        }  if (password(userInput, storm)) {
+            $("body").css("background-url","/img/Ben_drowned.webp")
+        }
+        if (password(userInput, storm)) {
             alert("Is it raining?")
             $("#storm").css("display","inline")
+            $(".title").css("display","none")
             setTimeout(()=>{
                 $("#storm").css("display","none")
-            },10000)
+                $(".title").css("display","inline")
+            },5000)
+
         }  if (password(userInput, saria)) {
             alert("Look at him dance!")
             $("#goron").css("display","inline")
+            $(".title").css("display","none")
+            setTimeout(()=>{
+                $("#goron").css("display","none")
+                $(".title").css("display","inline")
+            },5000)
         }
         userInput = [];
     } else {
