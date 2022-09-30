@@ -19,16 +19,16 @@ body{
 }
 @keyframes example {
     0%   {color: red;}
-    25%  {color: yellow;}
+    25%  {color: purple;}
     50%  {color: blue;}
     100% {color: green;}
 }
 .Konami{
     text-align: center;
     display: none;
-    /*animation-name: example,texty ;*/
-    /*animation-iteration-count: infinite,3;*/
-    /*animation-duration: 3s;*/
+    animation-name: example ;
+    animation-iteration-count: infinite,3;
+    animation-duration: 5s;
     position: relative;
     margin:300px;
     font-family: 'Anton', sans-serif;;
