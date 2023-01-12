@@ -36,17 +36,13 @@ class PacMan {
         c.closePath();
     }
     update(){
-
+this.draw();
+this.position.x+=this.velocity.x
+this.position.y+=this.velocity.y
     }
 }
 
-const map = [
-    ['-', '-', '-', '-', '-', '-'],
-    ['-', ' ', ' ', ' ', ' ', '-'],
-    ['-', ' ', '-', '-', ' ', '-'],
-    ['-', ' ', ' ', ' ', ' ', '-'],
-    ['-', '-', '-', '-', '-', '-']
-]
+
 const boundaries = []
 const pacMan = new PacMan({
     position: {
@@ -58,6 +54,28 @@ const pacMan = new PacMan({
         y:0
     }
 });
+const keys={
+    w:{
+        pressed:false
+    },
+    a:{
+        pressed:false
+    },
+    s:{
+        pressed:false
+    },
+    d:{
+        pressed:false
+    }
+}
+let lastKey =''
+const map = [
+    ['-', '-', '-', '-', '-', '-'],
+    ['-', ' ', ' ', ' ', ' ', '-'],
+    ['-', ' ', '-', '-', ' ', '-'],
+    ['-', ' ', ' ', ' ', ' ', '-'],
+    ['-', '-', '-', '-', '-', '-']
+]
 map.forEach((row, i) => {
     row.forEach((symbol, j) => {
         switch (symbol) {
@@ -76,23 +94,62 @@ map.forEach((row, i) => {
         }
     })
 })
-boundaries.forEach(boundary => {
-    boundary.draw()
+function animate(){
+    requestAnimationFrame(animate)
+    c.clearRect(0,0,canvas.width,canvas.height)
+    boundaries.forEach(boundary => {
+        boundary.draw()
 
-})
-pacMan.draw()
+    })
+    pacMan.update()
+    pacMan.velocity.y=0
+    pacMan.velocity.x=0
+
+    if(keys.w.pressed && lastKey=== 'w'){
+        pacMan.velocity.y=-5
+    }else if(keys.s.pressed&& lastKey=== 's'){
+        pacMan.velocity.y =5
+    }else if(keys.a.pressed&& lastKey=== 'a'){
+        pacMan.velocity.x =-5
+    }else if(keys.d.pressed&& lastKey=== 'd'){
+        pacMan.velocity.x =5
+    }
+}
+animate()
+
+
 
 window.addEventListener('keydown',({key})=>{
 
     switch(key){
-        case'w':pacMan.velocity.y=-5;
+        case'w':
+            keys.w.pressed=true
+            lastKey ='w'
         break;
-        case's':pacMan.velocity.y=5;
+        case's': keys.s.pressed=true
+            lastKey ='s'
         break;
-        case'a':pacMan.velocity.x=-5;
+        case'a': keys.a.pressed=true
+            lastKey ='a'
         break;
-        case'd':pacMan.velocity.x=5;
+        case'd': keys.d.pressed=true;
+            lastKey ='d'
         break;
     }
-    console.log(pacMan.velocity)
+
+})
+window.addEventListener('keyup',({key})=>{
+
+    switch(key){
+        case'w':
+            keys.w.pressed=false;
+            break;
+        case's': keys.s.pressed=false;
+            break;
+        case'a': keys.a.pressed=false;
+            break;
+        case'd': keys.d.pressed=false;
+            break;
+    }
+
 })
