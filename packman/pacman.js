@@ -8,17 +8,17 @@ class Boundary {
     static width = 40;
     static height = 40;
 
-    constructor({position,image}) {
+    constructor({position, image}) {
         this.position = position
         this.width = 40;
         this.height = 40;
-        this.image=image;
+        this.image = image;
     }
 
     draw() {
         // c.fillStyle = "blue";
         // c.fillRect(this.position.x, this.position.y, this.width, this.height)
-        c.drawImage(this.image,this.position.x,this.position.y)
+        c.drawImage(this.image, this.position.x, this.position.y)
     }
 }
 
@@ -76,16 +76,21 @@ const keys = {
 let lastKey = ''
 //the arena the game follows
 const map = [
-    ['-', '-', '-', '-', '-', '-', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['-', ' ', '-', ' ', '-', ' ', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['-', ' ', '-', ' ', '-', ' ', '-'],
-    ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-    ['-', '-', '-', '-', '-', '-', '-']
+    ['1', '-', '-', '-', '-', '-', '2'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['|', ' ', 'b', ' ', 'b', ' ', '|'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['|', ' ', 'b', ' ', 'b', ' ', '|'],
+    ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+    ['4', '-', '-', '-', '-', '-', '3']
 ]
-const image = new Image()
-image.src='./image/pipeHorizontal.png'
+
+function placeImage(src) {
+    const image = new Image()
+    image.src = src
+    return image
+}
+
 map.forEach((row, i) => {
     row.forEach((symbol, j) => {
         switch (symbol) {
@@ -96,21 +101,92 @@ map.forEach((row, i) => {
                             x: Boundary.width * j,
                             y: Boundary.height * i
                         },
-                        image:image
-
-
+                        image: placeImage('./image/pipeHorizontal.png')
 
 
                     })
                 )
                 break;
+            case'|':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: placeImage('./image/pipeVertical.png')
+
+
+                    })
+                )
+                break;
+            case'1':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: placeImage('./image/pipeCorner1.png')
+
+
+                    })
+                )
+                break;
+            case'2':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: placeImage('./image/pipeCorner2.png')
+
+
+                    })
+                )
+                break;
+            case'3':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: placeImage('./image/pipeCorner3.png')
+
+
+                    })
+                )
+                break;
+            case'4':
+                boundaries.push(
+                    new Boundary({
+                        position: {
+                            x: Boundary.width * j,
+                            y: Boundary.height * i
+                        },
+                        image: placeImage('./image/pipeCorner4.png')
+
+
+                    })
+                )
+                break;
+
         }
     })
 })
 
 function circleCollidesWithRectangle({circle, rectangle}) {
     return (
-        circle.position.y - circle.radius + circle.velocity.y <= rectangle.position.y + rectangle.height && circle.position.x + circle.radius + circle.velocity.x >= rectangle.position.x && circle.position.y + circle.radius + circle.velocity.y >= rectangle.position.y && circle.position.x - circle.radius + circle.velocity.x <= rectangle.position.x + rectangle.width
+        //top of pacman hitting border
+        circle.position.y - circle.radius + circle.velocity.y <= rectangle.position.y + rectangle.height &&
+        //right of pacman hitting border
+        circle.position.x + circle.radius + circle.velocity.x >= rectangle.position.x &&
+        //bottom of pacman hitting border
+        circle.position.y + circle.radius + circle.velocity.y >= rectangle.position.y &&
+        //left of pacman hitting border
+        circle.position.x - circle.radius + circle.velocity.x <= rectangle.position.x + rectangle.width
     )
 
 
@@ -122,30 +198,30 @@ function animate() {
     c.clearRect(0, 0, canvas.width, canvas.height)
 
     if (keys.w.pressed && lastKey === 'w') {
-        for(let i = 0; i<boundaries.length;i++){
-            const boundary =boundaries[i]
-        if (
-            circleCollidesWithRectangle({
-                circle: {
-                    ...pacMan, velocity: {
-                        x: 0,
-                        y: -5
+        for (let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
+            if (
+                circleCollidesWithRectangle({
+                    circle: {
+                        ...pacMan, velocity: {
+                            x: 0,
+                            y: -5
 
-                    }
-                },
-                rectangle: boundary
-            })
-        ) {
-            pacMan.velocity.y = 0
-            break
-        } else {
-            pacMan.velocity.y = -5
+                        }
+                    },
+                    rectangle: boundary
+                })
+            ) {
+                pacMan.velocity.y = 0
+                break
+            } else {
+                pacMan.velocity.y = -5
+            }
         }
-    }
 
     } else if (keys.s.pressed && lastKey === 's') {
-        for(let i = 0; i<boundaries.length;i++){
-            const boundary =boundaries[i]
+        for (let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
             if (
                 circleCollidesWithRectangle({
                     circle: {
@@ -163,9 +239,10 @@ function animate() {
             } else {
                 pacMan.velocity.y = 5
             }
-        }    } else if (keys.a.pressed && lastKey === 'a') {
-        for(let i = 0; i<boundaries.length;i++){
-            const boundary =boundaries[i]
+        }
+    } else if (keys.a.pressed && lastKey === 'a') {
+        for (let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
             if (
                 circleCollidesWithRectangle({
                     circle: {
@@ -183,9 +260,10 @@ function animate() {
             } else {
                 pacMan.velocity.x = -5
             }
-        }    } else if (keys.d.pressed && lastKey === 'd') {
-        for(let i = 0; i<boundaries.length;i++){
-            const boundary =boundaries[i]
+        }
+    } else if (keys.d.pressed && lastKey === 'd') {
+        for (let i = 0; i < boundaries.length; i++) {
+            const boundary = boundaries[i]
             if (
                 circleCollidesWithRectangle({
                     circle: {
@@ -203,7 +281,8 @@ function animate() {
             } else {
                 pacMan.velocity.x = 5
             }
-        }    }
+        }
+    }
 
     boundaries.forEach(boundary => {
         boundary.draw()
